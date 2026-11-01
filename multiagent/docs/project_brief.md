@@ -12,7 +12,7 @@
 
 系统采用分层架构,共分为四层:
 
-- **LLM 抽象层**(`core/llm.py`):定义统一的 `BaseLLM` 接口,提供 `MockLLM`(模拟模型)和 `OpenAILLM`(真实模型)两种实现。通过环境变量 `LLM_PROVIDER` 切换,`OPENAI_BASE_URL` 支持配置兼容接口(可对接 DeepSeek、Qwen 等)。
+- **LLM 抽象层**(`core/llm.py`):定义统一的 `BaseLLM` 接口,提供 `MockLLM`(规则模板模拟)、`OllamaLLM`(本地 Ollama 原生 `/api/chat`)与 `OpenAILLM`(OpenAI 兼容接口,可对接 DeepSeek、Qwen、智谱等)三种实现。通过环境变量 `LLM_PROVIDER` 切换,`OLLAMA_BASE_URL` / `OPENAI_BASE_URL` 分别配置对应端点。
 - **Agent 角色层**(`agents/definitions.py`):定义五个智能体角色的系统提示词、图标、颜色等元数据,形成角色注册表。
 - **LangGraph 编排层**(`core/graph.py`):使用 LangGraph 状态图定义智能体协作流程与条件路由,管理协作状态(任务、历史、当前角色)。
 - **Web 服务层**(`web/server.py` + `static/`):基于 Flask 提供 REST API 与 SSE 事件流,前端通过 HTML/CSS/JS 实现协作过程可视化。

@@ -17,3 +17,7 @@ __pycache__/
 *.genie
 
 *.log
+
+# Office 临时锁文件
+~$*
+*.tmp
