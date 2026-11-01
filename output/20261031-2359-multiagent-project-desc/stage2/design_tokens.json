@@ -1,0 +1,21 @@
+{
+  "theme": "business-modern",
+  "genre": "business-report",
+  "typography": {
+    "fontFamily": { "heading": "SimHei, sans-serif", "body": "SimSun, serif" },
+    "fontSize": { "h1": "18pt", "h2": "15pt", "h3": "13pt", "body": "12pt", "small": "10.5pt" },
+    "lineHeight": { "body": 1.7 }
+  },
+  "colors": {
+    "primary": "#1a5fb4",
+    "text": "#1a1a1a",
+    "muted": "#5f6368",
+    "border": "#d0d7de",
+    "highlight": "#f5f7fa",
+    "accent": "#1a5fb4"
+  },
+  "page": {
+    "footer": "页脚居中页码 counter(page)",
+    "cover": "命名页 cover，无页眉页脚，正文 data-page-restart=1"
+  }
+}

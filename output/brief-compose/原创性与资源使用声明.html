@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>原创性与资源使用声明</title>
+  <style>
+    h1 { font-family: SimHei, sans-serif; font-size: 18pt; color: #1a1a1a; text-align: center; margin: 0 0 0.2em 0; }
+    p.doc-subtitle { font-family: SimSun, serif; font-size: 10.5pt; color: #5f6368; text-align: center; margin: 0 0 1.5em 0; }
+    h2 { font-family: SimHei, sans-serif; font-size: 14pt; color: #1a5fb4; margin: 1.2em 0 0.5em 0; }
+    p { font-family: SimSun, serif; font-size: 12pt; line-height: 1.8; text-indent: 2em; text-align: justify; margin: 0 0 0.6em 0; }
+    ul { margin: 0.3em 0 0.8em 2.4em; }
+    li { font-family: SimSun, serif; font-size: 12pt; line-height: 1.7; margin-bottom: 0.4em; text-align: justify; }
+    p.sign { text-indent: 0; text-align: right; margin-top: 2em; font-size: 12pt; }
+  </style>
+</head>
+<body>
+  <h1>原创性与资源使用声明</h1>
+  <p class="doc-subtitle">项目：多智能体软件开发系统（multiagent）| 2026 年 10 月 31 日</p>
+
+  <h2>一、模型使用</h2>
+  <p>系统运行时使用本地 Ollama 部署的开源模型 qwen2.5:3b（阿里通义千问 3B 量化版，Apache 2.0 许可）作为智能体推理引擎，仅用于流程演示与功能验证，不涉及任何云端商业模型调用；另备有 MockLLM 模拟模式用于无模型环境的流程演示。</p>
+
+  <h2>二、数据使用</h2>
+  <p>本项目不使用任何外部数据集。全部输入为开发者自行编写的任务描述与测试指令，协作过程中的中间产出均由上述本地模型生成，未采集、未存储任何第三方数据或个人信息。</p>
+
+  <h2>三、代码与 AI 辅助情况</h2>
+  <p>本项目代码开发过程中<b>大量使用了 sciencepal.ai 辅助生成代码</b>：包括 LLM 抽象层、Ollama 接入、LangGraph 状态图编排、Flask/SSE 服务与前端页面等主要模块，均由 sciencepal.ai 依据本人描述的需求与架构生成初稿，再由本人逐段审读、调试、修改与验证后采纳，所有代码经过本人本机实际运行与端到端测试确认有效。</p>
+  <p>除上述辅助工具外，项目依赖的开源组件包括：LangGraph（状态图编排）、Flask 与 flask-cors（Web 服务）、requests（HTTP 客户端），均遵循其原开源许可使用，未复制任何受版权保护的第三方专有代码。</p>
+
+  <h2>四、API 与外部工具</h2>
+  <ul>
+    <li>Ollama 本地推理服务（127.0.0.1:11434，原生 /api/chat 接口，离线运行，无外部网络依赖）。</li>
+    <li>sciencepal.ai（AI 编程辅助工具，用于代码生成，为主要外部辅助手段）。</li>
+    <li>WorkBuddy 智能助手（用于开发过程协管、文档撰写与测试验证）。</li>
+  </ul>
+
+  <h2>五、原创性承诺</h2>
+  <p>本项目的需求分析、系统架构设计、协作流程与反馈循环机制由本人独立设计；代码在 AI 辅助下生成并经本人实质性修改与验证，本人对最终交付内容负责。本文档《多智能体软件开发系统项目说明》中的全部实测数据均来自本机真实运行结果，无虚构。特此声明。</p>
+
+  <p class="sign">声明人：＿＿＿＿＿＿＿＿＿＿<br>日期：2026 年 10 月 31 日</p>
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="docx-page-size" content="A4">
+<title>多智能体软件开发系统 项目说明</title>
+<style>
+  @page {
+    @bottom-center { content: counter(page); }
+  }
+  @page coverpage {
+    @bottom-center { content: none; }
+  }
+  section[role="cover"] { page: coverpage; }
+
+  :root {
+    --color-primary: #1a73e8;
+    --color-ink: #10233f;
+    --color-text: #1f2328;
+    --color-accent: #1a4b8c;
+    --color-muted: #5b6472;
+    --color-subtle: #3c4653;
+    --color-cover-bg: #f2f6fc;
+    --color-lead-bg: #f7f9fc;
+    --color-border: #cdd8e6;
+    --color-rule: #d6e2f5;
+    --color-th-bg: #eaf1fb;
+
+    --fs-body: 12pt;
+    --fs-small: 10.5pt;
+    --fs-h2: 16pt;
+    --fs-h3: 12.5pt;
+    --fs-cover-title: 30pt;
+    --fs-cover-sub: 13pt;
+    --fs-cover-cat: 11pt;
+
+    --ff-body: "宋体", SimSun, serif;
+    --ff-heading: "黑体", SimHei, sans-serif;
+
+    --spacing-1: 4px;
+    --spacing-2: 8px;
+    --spacing-3: 12px;
+    --spacing-4: 16px;
+    --spacing-5: 26px;
+    --spacing-6: 90px;
+    --spacing-cover-x: 64px;
+    --spacing-cell-y: 5px;
+    --spacing-cell-x: 7px;
+    --spacing-list: 2.4em;
+    --spacing-block: 140px;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    font-family: var(--ff-body);
+    font-size: var(--fs-body);
+    line-height: 1.7;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  .cover {
+    min-height: 740px;
+    padding: var(--spacing-6) var(--spacing-cover-x);
+    background: var(--color-cover-bg);
+    border-top: 10px solid var(--color-primary);
+  }
+  .cover-cat {
+    font-family: var(--ff-heading);
+    font-size: var(--fs-cover-cat);
+    letter-spacing: 0.28em;
+    color: var(--color-primary);
+    margin: 0 0 var(--spacing-6) 0;
+    padding: 0;
+    text-align: left;
+    text-indent: 0;
+  }
+  .cover-title {
+    font-family: var(--ff-heading);
+    font-size: var(--fs-cover-title);
+    font-weight: bold;
+    color: var(--color-ink);
+    line-height: 1.35;
+    margin: 0 0 var(--spacing-4) 0;
+    padding: 0;
+    text-align: left;
+    text-indent: 0;
+  }
+  .cover-sub {
+    font-size: var(--fs-cover-sub);
+    color: var(--color-subtle);
+    line-height: 1.6;
+    margin: 0 0 var(--spacing-block) 0;
+    padding: 0;
+    text-align: left;
+    text-indent: 0;
+  }
+  .cover-rule {
+    width: 96px;
+    height: 4px;
+    background: var(--color-primary);
+    margin: 0 0 var(--spacing-5) 0;
+    padding: 0;
+    text-align: left;
+  }
+  .cover-meta {
+    font-size: var(--fs-small);
+    color: var(--color-muted);
+    line-height: 1.9;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    text-indent: 0;
+  }
+
+  .body-sec { padding: 0 var(--spacing-2); }
+
+  h2 {
+    font-family: var(--ff-heading);
+    font-size: var(--fs-h2);
+    font-weight: bold;
+    color: var(--color-ink);
+    margin: var(--spacing-5) 0 var(--spacing-3) 0;
+    padding: 0 0 var(--spacing-1) 0;
+    border-bottom: 1.5px solid var(--color-rule);
+    text-indent: 0;
+  }
+  h3 {
+    font-family: var(--ff-heading);
+    font-size: var(--fs-h3);
+    font-weight: bold;
+    color: var(--color-accent);
+    margin: var(--spacing-4) 0 var(--spacing-1) 0;
+    padding: 0;
+    text-indent: 0;
+  }
+  p {
+    margin: 0 0 var(--spacing-2) 0;
+    padding: 0;
+    text-indent: 2em;
+    text-align: justify;
+  }
+  ul, ol {
+    margin: 0 0 var(--spacing-2) 0;
+    padding: 0 0 0 var(--spacing-list);
+  }
+  li {
+    margin: 0 0 var(--spacing-1) 0;
+    text-align: justify;
+  }
+  .lead {
+    color: var(--color-subtle);
+    background: var(--color-lead-bg);
+    border-left: 3px solid var(--color-primary);
+    margin: 0 0 var(--spacing-3) 0;
+    padding: var(--spacing-2) var(--spacing-3);
+    text-indent: 2em;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--spacing-2) 0 var(--spacing-4) 0;
+    font-size: var(--fs-small);
+    line-height: 1.5;
+  }
+  th, td {
+    border: 1px solid var(--color-border);
+    padding: var(--spacing-cell-y) var(--spacing-cell-x);
+    text-align: left;
+    vertical-align: top;
+    text-indent: 0;
+  }
+  th {
+    background: var(--color-th-bg);
+    font-family: var(--ff-heading);
+    font-weight: bold;
+    color: var(--color-ink);
+  }
+
+  .executive-summary {
+    background: var(--color-lead-bg);
+    border-left: 3px solid var(--color-primary);
+    margin: var(--spacing-4) 0 var(--spacing-4) 0;
+    padding: var(--spacing-3) var(--spacing-4);
+  }
+  .summary-title {
+    font-family: var(--ff-heading);
+    font-weight: bold;
+    color: var(--color-ink);
+    text-align: left;
+    text-indent: 0;
+    margin: 0 0 var(--spacing-1) 0;
+    padding: 0;
+  }
+</style>
+</head>
+<body>
+
+<section role="cover" class="cover">
+  <p class="cover-cat" style="text-align: left;">项目说明</p>
+  <p class="cover-title" style="text-align: left;">多智能体软件开发系统</p>
+  <p class="cover-sub" style="text-align: left;">基于 LangGraph 的五角色协作流水线<br>本地 Ollama 部署版</p>
+  <div class="cover-rule" style="text-align: left;"></div>
+  <p class="cover-meta" style="text-align: left;">技术方案 · 创新点 · 验证结果 · 当前局限 · 后续计划</p>
+  <p class="cover-meta" style="text-align: left;">2026 年 10 月 31 日</p>
+</section>
+
+<section role="body" class="body-sec" data-page-restart="1">
+
+  <div class="executive-summary">
+    <p class="summary-title" style="text-align: left;">执行摘要</p>
+    <p style="text-align: justify;">本项目把软件开发流程拆成产品经理、架构师、开发者、测试工程师、代码审查员五个角色，用 LangGraph 状态图驱动其协作，并在测试与审查两处设置回流条件，形成可收敛的迭代闭环。系统支持模拟模型与真实模型一键切换，当前已在本地 Ollama + qwen2.5:3b 上跑通端到端流程：单任务平均 340~390 秒，五个角色均产出有效内容，审查结论可正确驱动流程终止。核心代码 1180 行，无外部数据依赖。</p>
+  </div>
+
+  <h2>一、技术方案</h2>
+  <p class="lead" style="text-align: justify;">系统以「角色分工 + 状态图编排」为核心，把软件开发流程拆成五个职责明确的智能体，用有向状态图驱动协作，并在测试与审查两处设置回流条件，形成可收敛的迭代闭环。全项目 1180 行，其中 Python 875 行、前端 305 行。</p>
+
+  <h3>1.1 四层架构</h3>
+  <ul>
+    <li><strong>LLM 抽象层</strong>（core/llm.py，307 行）：统一 BaseLLM 接口，提供三种实现——模拟模型用规则模板生成确定性输出；Ollama 实现走原生对话协议，仅依赖 requests；兼容实现面向 OpenAI 风格端点，可指向 DeepSeek、通义千问等。工厂函数按环境变量选择实现，切换实现不触碰任何上层代码。</li>
+    <li><strong>角色定义层</strong>（agents/definitions.py，119 行）：以数据类描述五个角色的系统提示词、名称、图标与主题色，形成注册表，新增角色只需追加一条定义。</li>
+    <li><strong>编排层</strong>（core/graph.py，193 行）：用 LangGraph 状态图定义协作流程。状态对象携带任务、协作历史、当前角色、最近输出与迭代计数五个字段，节点只返回增量，由框架负责合并。</li>
+    <li><strong>服务层</strong>（web/server.py 与 static/，290 行）：Flask 提供 REST 与 SSE 接口，前端为原生 HTML/CSS/JavaScript，不引入前端框架。</li>
+  </ul>
+
+  <h3>1.2 协作流程与反馈循环</h3>
+  <p>主线为「产品经理 → 架构师 → 开发者 → 测试工程师 → 代码审查员」。图上另设两条条件边：测试节点之后，判定通过则进入审查，否则回流开发者；审查节点之后，判定通过则结束，否则回流开发者修改。开发者节点每次执行使迭代计数加一，达到上限（默认 2 次）即推送终止事件并结束，避免小模型反复改不出结果时无限循环；图执行本身另设递归上限作为兜底。</p>
+
+  <h3>1.3 关键实现要点</h3>
+  <p><strong>结论判定不依赖宽泛关键词。</strong>判定函数优先用正则抓取「结论：通过 / 不通过」标记，且先判否定词（「不通过」本身包含「通过」，必须先判否定）；抓不到标记时才退化为关键词匹配。角色提示词强制要求末行输出固定格式结论，形成「格式约定 + 三级回退」的双保险。</p>
+  <p><strong>上下文预算控制。</strong>每轮把前序产出拼接后送入模型，超过字符预算（默认 6000）即截断并保留最近产出，避免早期内容占满小模型的上下文窗口。</p>
+  <p><strong>参数与模型驻留。</strong>生成温度 0.6、上下文 8192、单次生成上限 768 token、请求超时 300 秒；请求体携带驻留时长，使模型留在内存中，避免每次运行都重复承担二三十秒冷启动。</p>
+  <p><strong>实时可视化与并发保护。</strong>节点开始、节点完成、循环终止、运行结束四类事件经内存队列广播给所有订阅者，新连接先收到当前状态快照，断线重连可恢复进度；已有任务在运行时提交新任务返回 409，避免多任务争抢同一份模型资源。</p>
+
+  <h2>二、创新点</h2>
+  <p class="lead" style="text-align: justify;">本项目的创新不在「又做了一个多智能体」，而在于让多智能体在弱算力、小模型的现实条件下仍然跑得稳、看得见、判得准。</p>
+  <ol>
+    <li><strong>反馈闭环而非单向流水线。</strong>测试与审查被设计为可控回路，不通过即回流修复，配合迭代上限形成可收敛的迭代，比一次性生成更贴近真实开发过程。</li>
+    <li><strong>把「判定」当工程问题处理。</strong>格式约定、否定优先、三级回退三层设计，使三十亿参数级模型也能稳定驱动流程分支——实测无需任何提示词修补即可正确终止，而这正是小模型跑多智能体最容易翻车的一环。</li>
+    <li><strong>一套代码两种演示形态。</strong>模拟模型与真实模型通过一个环境变量切换：需要零依赖、无网络、无密钥的快速演示时用模拟模型，需要真实推理时切本地服务或在线端点，前端与编排层完全不变。</li>
+    <li><strong>面向弱算力的工程约束。</strong>上下文预算、生成上限、迭代上限、模型驻留四项约束共同作用，使「普通笔记本处理器 + 3B 模型」这类低成本环境也能跑通完整闭环。</li>
+    <li><strong>过程可见即可评审。</strong>事件流逐节点推送，角色卡片、颜色、图标与协作历史同源，评审者看到的是任务如何在角色之间流转，而不只是一个最终答案。</li>
+  </ol>
+
+  <h2>三、验证结果</h2>
+  <p class="lead" style="text-align: justify;">验证覆盖编排正确性、分支判定、接口健壮性与真实模型下的端到端表现，模拟模型与本地模型两条链路均已跑通。</p>
+  <table>
+    <thead>
+      <tr><th>验证项</th><th>方法与条件</th><th>结果</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>图执行顺序</td><td>直接调用编排类运行任务</td><td>产品经理→架构师→开发者→测试→审查，历史 5 条</td></tr>
+      <tr><td>结论路由</td><td>审查输出含「结论：通过」</td><td>正常进入结束节点，无回流</td></tr>
+      <tr><td>迭代保护</td><td>迭代上限设为 2</td><td>未通过时回流计次，达上限推送终止事件</td></tr>
+      <tr><td>Web 全链路</td><td>提交任务并轮询状态接口</td><td>任务启动、进度递增、结束时间正常写入</td></tr>
+      <tr><td>实时推送</td><td>订阅事件流</td><td>首帧返回状态快照，随后逐节点推送</td></tr>
+      <tr><td>接口健壮性</td><td>调用角色/状态/运行/首页接口</td><td>均正常响应；重复提交返回 409</td></tr>
+      <tr><td>本地真实模型</td><td>Ollama 0.40.5 + qwen2.5:3b（Q4_K_M）</td><td>五个角色均产出有效内容，单任务 340~390 秒，约 7 token/秒</td></tr>
+      <tr><td>模拟模型</td><td>切换为模拟实现</td><td>同一链路 2 秒内完成，用于流程回归</td></tr>
+    </tbody>
+  </table>
+  <p>以「写一个判断回文字符串的 Python 函数」为测试任务，真实模型下开发者给出了完整函数实现，测试给出单元测试用例与固定格式结论，审查给出结构化优缺点分析与「结论：通过」，流程按预期收敛。</p>
+
+  <h2>四、当前局限</h2>
+  <p class="lead" style="text-align: justify;">最大的局限是「生成」与「落地」之间的差距：系统产出的是文本，而不是跑得起来的工程产物。</p>
+  <ol>
+    <li><strong>生成不等于落地。</strong>开发者输出的代码块只进入协作历史与界面，不写入磁盘、不被执行；测试报告由模型自述而非真实运行结果。这是演示级与工程级的分界线。</li>
+    <li><strong>小模型能力与速度上限。</strong>三十亿参数模型在处理器上约 7 token/秒，单任务接近 6 分钟；架构设计段落出现明显循环赘述，审查意见偏笼统，任务规模一大就吃力。</li>
+    <li><strong>判定仍依赖文本。</strong>结论判定本质是格式约定加正则匹配，模型不按格式输出时只能退化猜测，鲁棒性有限。</li>
+    <li><strong>单任务串行、无持久化。</strong>同一时刻只能运行一个任务；协作历史仅存于内存，服务重启即丢失。</li>
+    <li><strong>前端只做展示。</strong>缺少代码文件预览、测试报告下载、历史回放等交互能力。</li>
+  </ol>
+
+  <h2>五、后续计划</h2>
+  <p class="lead" style="text-align: justify;">后续工作围绕一条主线展开：让系统从「演得好看」走向「真的能交付」。</p>
+  <ol>
+    <li><strong>让代码真正落地。</strong>开发者输出写入工作目录，测试在受限子进程中实际执行，审查基于真实改动与覆盖率数据，把自述质量换成实测质量。</li>
+    <li><strong>用结构化输出替代文本约定。</strong>约束各节点输出结构化结论对象（状态、理由、待修项），彻底移除正则判定。</li>
+    <li><strong>任务队列与持久化。</strong>引入任务队列与轻量数据库，记录任务、历史与产物，支持中断恢复与历史回放。</li>
+    <li><strong>按角色分级选模型。</strong>架构与审查用能力更强的模型，实现与测试用小模型，配合流式输出降低首字等待，在质量与时延之间取得平衡。</li>
+    <li><strong>角色与流程可扩展。</strong>开放角色注册表与流程图配置，支持「安全审查员」「性能优化师」等自定义角色。</li>
+  </ol>
+
+</section>
+</body>
+</html>

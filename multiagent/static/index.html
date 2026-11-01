@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>多智能体软件开发系统</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="logo">🤖 多智能体软件开发系统</div>
+    <div class="topbar-right">
+      <div class="model-badge" id="modelBadge" title="当前推理后端">模型加载中…</div>
+      <div class="status" id="statusBadge">空闲</div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <!-- 左侧: 输入与角色 -->
+    <aside class="panel left-panel">
+      <section class="card">
+        <h2>📝 提交开发任务</h2>
+        <textarea id="taskInput" rows="4" placeholder="例如: 实现一个用户登录模块,支持注册、登录、登出,密码加密存储"></textarea>
+        <button id="runBtn" class="btn-primary">🚀 启动多智能体协作</button>
+        <div class="hint">系统将依次由 产品经理 → 架构师 → 开发者 → 测试 → 审查 协作完成</div>
+      </section>
+
+      <section class="card">
+        <h2>👥 智能体团队</h2>
+        <div id="roleList" class="role-list"></div>
+      </section>
+    </aside>
+
+    <!-- 右侧: 协作过程可视化 -->
+    <section class="panel main-panel">
+      <div class="card">
+        <h2>🔄 协作过程</h2>
+        <div id="pipeline" class="pipeline"></div>
+      </div>
+
+      <div class="card">
+        <h2>📜 协作日志</h2>
+        <div id="log" class="log"></div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

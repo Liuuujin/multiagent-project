@@ -1,0 +1,55 @@
+schema_version: 1
+request_id: 7dd76df1-402b-4a54-98c5-e271626c6d5f
+created_at: 2026-10-31T15:25:04
+updated_at: 2026-10-31T15:25:46
+
+entry_type: full_pipeline
+stage_chain: [1, 2, 3]
+
+output_docx_path: "D:/multiagent-2026-10-31/multiagent/docs/多智能体软件开发系统_项目说明.docx"
+output_docx_user_specified: true
+
+current_stage: 2
+
+stages:
+  stage_0:
+    status: completed
+    completed_at: 2026-10-31T15:25:04
+    decision: full_pipeline
+  stage_1:
+    status: completed
+    started_at: 2026-10-31T15:25:46
+    completed_at: 2026-10-31T15:25:46
+    output_path: "stage1/final_draft.md"
+    genre: general
+    expert_used: general-writer
+    route_tag: general_writing
+  stage_2:
+    status: pending
+    started_at: null
+    completed_at: null
+    route: null
+    html_sub: null
+    output_path: null
+    output_format: null
+    skills_invoked: []
+    design_tokens_path: null
+    fallback: false
+    fallback_reason: null
+  stage_3:
+    status: pending
+    started_at: null
+    completed_at: null
+    executor: null
+    input_format: null
+    output_path: null
+    skill_used: []
+    present_files_opened: false
+    fallback: false
+    fallback_reason: null
+
+consistency_check:
+  output_files_exist: null
+  stage_chain_complete: null
+  last_checked_at: null
+  errors: []
